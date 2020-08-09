@@ -1,19 +1,20 @@
 <template>
-  <div>{{ count }} {{ object.foo }}</div>
+  <div></div>
 </template>
 
 <script>
-import { ref, reactive } from 'vue'
+import { ref } from 'vue'
 
 export default {
   setup () {
     const count = ref(0)
-    const object = reactive({ foo: 'bar' })
+    console.log(count.value) // 0
+
+    count.value++
+    console.log(count.value) // 1
 
     // expose to template
     return {
-      count,
-      object
     }
   }
 }
